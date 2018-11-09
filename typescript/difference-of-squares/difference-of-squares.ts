@@ -8,20 +8,10 @@ class Squares {
         this.difference = this.calc_difference
     }
     get calc_squareOfSum(): number {
-        let copy = this.num
-        let result = 0
-        while (copy > 0) {
-            result += copy--
-        }
-        return result ** 2
+        return ((this.num * (this.num + 1) / 2) ** 2)
     }
     get calc_sumOfSquares(): number {
-        let copy = this.num
-        let result = 0
-        while (copy > 0) {
-            result += (copy--) ** 2
-        }
-        return result
+        return (this.num * (this.num + 1) * (2 * this.num + 1) / 6)
     }
     get calc_difference(): number {
         return this.squareOfSum - this.sumOfSquares
