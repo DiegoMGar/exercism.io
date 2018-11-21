@@ -1,5 +1,5 @@
 module Acronym
     def Acronym.abbreviate(text)
-        text.split(/[ -]+/).collect { |word| word[0].upcase }.join('')
+        text.scan(/([a-z]{1})[a-z]*[ -,]*/i).join('').upcase
     end
 end
