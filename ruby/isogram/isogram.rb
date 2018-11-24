@@ -1,13 +1,13 @@
 module Isogram
-    def isogram?(text)
-        mapa = {}
-        text.each do |c|
-            if mapa.has_key? c.to_sym
-                return false
-            else
-                mapa[c] = 0
-            end
+  def Isogram.isogram?(text)
+    mapa = {}
+    text.scan(/([a-z]+)[ -,]*/i).each do |word|
+      word[0].split('').each do |c|
+        if text.scan(/#{c}{1}/i).length > 1
+          return false
         end
-        return true
+      end
     end
+    return true
+  end
 end
